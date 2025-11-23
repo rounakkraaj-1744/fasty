@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Box, Zap, Layers, Shield, Cpu, Code2 } from 'lucide-react';
 import { CodeBlock } from '@/components/CodeBlock';
-import { Footer } from '@/components/Footer';
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
     <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 transition-all duration-300 shadow-sm hover:shadow-xl">
@@ -214,8 +213,6 @@ console.log(data.username);`}
                     </table>
                 </div>
             </section>
-
-            <Footer />
         </div>
     );
 };

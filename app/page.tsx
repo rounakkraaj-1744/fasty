@@ -30,7 +30,7 @@ function ComparisonRow({ feature, fastclient, axios, fetch }: { feature: string;
 export default function Home() {
   return (
     <>
-      <Navbar onMenuClick={() => {}} />
+      <Navbar onMenuClick={() => { }} />
       <div className="min-h-screen bg-slate-50 dark:bg-black">
         {/* Hero Section */}
         <div className="relative overflow-hidden">
@@ -88,6 +88,7 @@ export default function Home() {
             </div>
             <CodeBlock
               language="typescript"
+              animate={true}
               code={`import { FastClient, retry, cache } from 'fast-client';
 
 const client = new FastClient({

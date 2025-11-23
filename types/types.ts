@@ -22,4 +22,5 @@ export interface CodeBlockProps {
   code: string;
   language?: string;
   filename?: string;
+  animate?: boolean;
 }
