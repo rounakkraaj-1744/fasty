@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                     </button>
 
                     <a
-                        href="https://github.com"
+                        href="https://github.com/rounakkraaj-1744/fasty"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400"

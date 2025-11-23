@@ -19,11 +19,11 @@ export function ContributingPage() {
       
       <h3>1. Fork and Clone</h3>
       <CodeBlock code={`# Fork the repository on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/fastclient.git
+git clone https://github.com/rounakkraaj-1744/fasty.git
 cd fastclient
 
 # Add the upstream repository
-git remote add upstream https://github.com/fastclient/fastclient.git`} language="bash" />
+git remote add upstream https://github.com/rounakkraaj-1744/fasty.git`} language="bash" />
 
       <h3>2. Install Dependencies</h3>
       <CodeBlock code={`npm install`} language="bash" />

@@ -61,7 +61,7 @@ export default function Landing() {
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
-                                href="https://github.com"
+                                href="https://github.com/rounakkraaj-1744/fasty"
                                 target="_blank"
                                 className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center justify-center gap-2"
                             >
