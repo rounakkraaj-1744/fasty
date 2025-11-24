@@ -23,8 +23,8 @@ const navSections: NavSection[] = [
     {
         title: 'Introduction',
         items: [
-            { slug: 'what-is-fastclient', label: 'What is FastClient?' },
-            { slug: 'why-fastclient', label: 'Why FastClient exists' },
+            { slug: 'what-is-fasty', label: 'What is fasty?' },
+            { slug: 'why-fasty', label: 'Why fasty exists' },
             { slug: 'key-concepts', label: 'Key concepts' },
             { slug: 'architecture', label: 'Architecture diagram' },
         ]
@@ -48,7 +48,7 @@ const navSections: NavSection[] = [
     {
         title: 'Core API',
         items: [
-            { slug: 'constructor', label: 'FastClient constructor' },
+            { slug: 'constructor', label: 'fasty constructor' },
             { slug: 'get-method', label: 'client.get()' },
             { slug: 'post-method', label: 'client.post()' },
             { slug: 'put-method', label: 'client.put()' },
@@ -85,7 +85,7 @@ const navSections: NavSection[] = [
     {
         title: 'Performance',
         items: [
-            { slug: 'performance-overview', label: 'How FastClient reduces latency' },
+            { slug: 'performance-overview', label: 'How fasty reduces latency' },
             { slug: 'benchmarks', label: 'Benchmarks' },
         ]
     },

@@ -12,21 +12,21 @@ export function TransportsPage({ pageId }: TransportsPageProps) {
         return (
             <DocLayout
                 title="Browser transport"
-                description="How FastClient works in browsers"
+                description="How fasty works in browsers"
             >
                 <h2>Overview</h2>
                 <p>
-                    In browser environments, FastClient uses the native <code>fetch()</code> API for making HTTP requests.
+                    In browser environments, fasty uses the native <code>fetch()</code> API for making HTTP requests.
                 </p>
 
                 <h2>Automatic Detection</h2>
                 <p>
-                    FastClient automatically detects when it's running in a browser and uses the appropriate transport:
+                    fasty automatically detects when it's running in a browser and uses the appropriate transport:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com'
 });
 
@@ -44,7 +44,7 @@ const data = await client.get('/users');`} />
                 </ul>
 
                 <h2>CORS Requests</h2>
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   withCredentials: true  // Include cookies in CORS requests
 });
@@ -75,7 +75,7 @@ try {
 
                 <h2>Browser Compatibility</h2>
                 <p>
-                    FastClient works in all modern browsers:
+                    fasty works in all modern browsers:
                 </p>
                 <ul>
                     <li>Chrome 42+</li>
@@ -95,7 +95,7 @@ try {
             >
                 <h2>Overview</h2>
                 <p>
-                    In Node.js, FastClient uses a custom transport built on the native <code>http</code> and <code>https</code>
+                    In Node.js, fasty uses a custom transport built on the native <code>http</code> and <code>https</code>
                     modules with automatic keep-alive connection pooling.
                 </p>
 
@@ -113,12 +113,12 @@ try {
 
                 <h2>Automatic Configuration</h2>
                 <p>
-                    FastClient automatically configures keep-alive in Node.js:
+                    fasty automatically configures keep-alive in Node.js:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com'
 });
 
@@ -136,7 +136,7 @@ Request 1: TCP handshake → TLS handshake → HTTP Request → Close
 Request 2: TCP handshake → TLS handshake → HTTP Request → Close
 Request 3: TCP handshake → TLS handshake → HTTP Request → Close
 
-With Keep-Alive (FastClient):
+With Keep-Alive (fasty):
 Request 1: TCP handshake → TLS handshake → HTTP Request
 Request 2: ─────────────────────────────────→ HTTP Request (reuse)
 Request 3: ─────────────────────────────────→ HTTP Request (reuse)
@@ -145,7 +145,7 @@ Time saved: ~100-200ms per request`} />
                 </div>
 
                 <h2>Custom Agent Configuration</h2>
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 import https from 'https';
 
 const agent = new https.Agent({
@@ -156,17 +156,17 @@ const agent = new https.Agent({
   timeout: 60000          // Socket timeout
 });
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   httpAgent: agent
 });`} />
 
                 <h2>Connection Pooling</h2>
                 <p>
-                    FastClient maintains a pool of connections per host:
+                    fasty maintains a pool of connections per host:
                 </p>
 
-                <CodeBlock code={`const client = new FastClient();
+                <CodeBlock code={`const client = new fasty();
 
 // Parallel requests to same host use connection pool
 await Promise.all([
@@ -177,9 +177,9 @@ await Promise.all([
 // Uses 1-3 pooled connections (depending on availability)`} />
 
                 <h2>HTTP/2 Support</h2>
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   http2: true  // Enable HTTP/2
 });
@@ -240,7 +240,7 @@ await Promise.all([
                     You can provide a custom transport implementation:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
 const customTransport = {
   async request(config) {
@@ -256,7 +256,7 @@ const customTransport = {
   }
 };
 
-const client = new FastClient({
+const client = new fasty({
   transport: customTransport
 });`} />
 
@@ -273,7 +273,7 @@ const client = new FastClient({
   }
 };
 
-const client = new FastClient({
+const client = new fasty({
   transport: mockTransport
 });
 
@@ -287,19 +287,19 @@ const data = await client.get('/users/123');
         return (
             <DocLayout
                 title="Deno / Bun compatibility"
-                description="Using FastClient in alternative runtimes"
+                description="Using fasty in alternative runtimes"
             >
                 <h2>Deno</h2>
                 <p>
-                    FastClient works seamlessly in Deno using native fetch:
+                    fasty works seamlessly in Deno using native fetch:
                 </p>
 
                 <CodeBlock code={`// Import from npm or CDN
-import { FastClient } from "npm:fastclient@2.0.0";
+import { fasty } from "npm:fasty@2.0.0";
 // or
-import { FastClient } from "https://esm.sh/fastclient@2.0.0";
+import { fasty } from "https://esm.sh/fasty@2.0.0";
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: "https://api.example.com"
 });
 
@@ -307,12 +307,12 @@ const data = await client.get("/users");`} />
 
                 <h2>Bun</h2>
                 <p>
-                    Bun's optimized fetch implementation works great with FastClient:
+                    Bun's optimized fetch implementation works great with fasty:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from "fastclient";
+                <CodeBlock code={`import { fasty } from "fasty";
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: "https://api.example.com"
 });
 
@@ -320,11 +320,11 @@ const client = new FastClient({
 const data = await client.get("/users");`} />
 
                 <h2>Cloudflare Workers</h2>
-                <CodeBlock code={`import { FastClient } from "fastclient";
+                <CodeBlock code={`import { fasty } from "fasty";
 
 export default {
   async fetch(request, env) {
-    const client = new FastClient({
+    const client = new fasty({
       baseURL: "https://api.example.com"
     });
     

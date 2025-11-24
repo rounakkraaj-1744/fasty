@@ -11,16 +11,16 @@ export function CoreAPIPage({ pageId }: CoreAPIPageProps) {
     if (pageId === 'constructor') {
         return (
             <DocLayout
-                title="FastClient constructor"
-                description="Create and configure a FastClient instance"
+                title="fasty constructor"
+                description="Create and configure a fasty instance"
             >
                 <h2>Basic Usage</h2>
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient();`} />
+const client = new fasty();`} />
 
                 <h2>With Configuration</h2>
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000,
   headers: {
@@ -81,12 +81,12 @@ const client = new FastClient();`} />
                     Create multiple clients for different APIs:
                 </p>
 
-                <CodeBlock code={`const apiClient = new FastClient({
+                <CodeBlock code={`const apiClient = new fasty({
   baseURL: 'https://api.example.com',
   headers: { 'Authorization': 'Bearer token1' }
 });
 
-const authClient = new FastClient({
+const authClient = new fasty({
   baseURL: 'https://auth.example.com',
   timeout: 10000
 });`} />
@@ -374,7 +374,7 @@ await client.get('/endpoint', {
             >
                 <h2>Response Object</h2>
                 <p>
-                    By default, FastClient returns the parsed response data directly:
+                    By default, fasty returns the parsed response data directly:
                 </p>
 
                 <CodeBlock code={`const user = await client.get('/users/123');

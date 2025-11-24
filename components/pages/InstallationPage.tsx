@@ -8,11 +8,11 @@ export function InstallationPage() {
     return (
         <DocLayout
             title="Installation"
-            description="Get started with FastClient in your project"
+            description="Get started with fasty in your project"
         >
             <h2>Package Manager</h2>
             <p>
-                Install FastClient using your preferred package manager:
+                Install fasty using your preferred package manager:
             </p>
 
             <Tabs defaultValue="npm" className="my-6">
@@ -24,62 +24,62 @@ export function InstallationPage() {
                 </TabsList>
 
                 <TabsContent value="npm">
-                    <CodeBlock code="npm install fastclient" language="bash" />
+                    <CodeBlock code="npm install fasty" language="bash" />
                 </TabsContent>
 
                 <TabsContent value="yarn">
-                    <CodeBlock code="yarn add fastclient" language="bash" />
+                    <CodeBlock code="yarn add fasty" language="bash" />
                 </TabsContent>
 
                 <TabsContent value="pnpm">
-                    <CodeBlock code="pnpm add fastclient" language="bash" />
+                    <CodeBlock code="pnpm add fasty" language="bash" />
                 </TabsContent>
 
                 <TabsContent value="bun">
-                    <CodeBlock code="bun add fastclient" language="bash" />
+                    <CodeBlock code="bun add fasty" language="bash" />
                 </TabsContent>
             </Tabs>
 
             <h2>CDN</h2>
             <p>
-                For quick prototyping or simple projects, you can use FastClient directly from a CDN:
+                For quick prototyping or simple projects, you can use fasty directly from a CDN:
             </p>
 
             <CodeBlock code={`<!-- ESM -->
 <script type="module">
-  import { FastClient } from 'https://esm.sh/fastclient@2.0.0';
+  import { fasty } from 'https://esm.sh/fasty@2.0.0';
   
-  const client = new FastClient({
+  const client = new fasty({
     baseURL: 'https://api.example.com'
   });
 </script>
 
 <!-- UMD -->
-<script src="https://unpkg.com/fastclient@2.0.0/dist/fastclient.umd.js"></script>
+<script src="https://unpkg.com/fasty@2.0.0/dist/fasty.umd.js"></script>
 <script>
-  const client = new FastClient.FastClient({
+  const client = new fasty.fasty({
     baseURL: 'https://api.example.com'
   });
 </script>`} language="html" />
 
             <h2>Deno</h2>
             <p>
-                Import FastClient directly from npm or a CDN in Deno:
+                Import fasty directly from npm or a CDN in Deno:
             </p>
 
             <CodeBlock code={`// From npm:
-import { FastClient } from "npm:fastclient@2.0.0";
+import { fasty } from "npm:fasty@2.0.0";
 
 // From esm.sh:
-import { FastClient } from "https://esm.sh/fastclient@2.0.0";
+import { fasty } from "https://esm.sh/fasty@2.0.0";
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: "https://api.example.com"
 });`} language="typescript" />
 
             <h2>Requirements</h2>
             <p>
-                FastClient works in the following environments:
+                fasty works in the following environments:
             </p>
 
             <ul>
@@ -92,12 +92,12 @@ const client = new FastClient({
 
             <h2>TypeScript</h2>
             <p>
-                FastClient is written in TypeScript and includes type definitions. No additional <code>@types</code> package is needed.
+                fasty is written in TypeScript and includes type definitions. No additional <code>@types</code> package is needed.
             </p>
 
-            <CodeBlock code={`import { FastClient, type RequestOptions } from 'fastclient';
+            <CodeBlock code={`import { fasty, type RequestOptions } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com'
 });
 
@@ -112,7 +112,7 @@ const user = await client.get<User>('/users/123');`} language="typescript" />
 
             <h2>Bundle Size</h2>
             <p>
-                FastClient is optimized for minimal bundle size:
+                fasty is optimized for minimal bundle size:
             </p>
 
             <div className="my-6 p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
@@ -134,7 +134,7 @@ const user = await client.get<User>('/users/123');`} language="typescript" />
 
             <h2>Next Steps</h2>
             <p>
-                Now that you have FastClient installed, check out the <a href="#" className="text-violet-600 dark:text-violet-400 hover:underline">Quick Start guide</a> to learn how to make your first request.
+                Now that you have fasty installed, check out the <a href="#" className="text-violet-600 dark:text-violet-400 hover:underline">Quick Start guide</a> to learn how to make your first request.
             </p>
         </DocLayout>
     );

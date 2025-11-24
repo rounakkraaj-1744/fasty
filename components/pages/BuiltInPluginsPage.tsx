@@ -20,9 +20,9 @@ export function BuiltInPluginsPage({ pageId }: BuiltInPluginsPageProps) {
                 </p>
 
                 <h2>Basic Usage</h2>
-                <CodeBlock code={`import { FastClient, retryPlugin } from 'fastclient';
+                <CodeBlock code={`import { fasty, retryPlugin } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [
     retryPlugin({
@@ -199,9 +199,9 @@ Attempt 4: Request → Success ✓
                 </p>
 
                 <h2>Basic Usage</h2>
-                <CodeBlock code={`import { FastClient, cachePlugin } from 'fastclient';
+                <CodeBlock code={`import { fasty, cachePlugin } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [
     cachePlugin({
@@ -323,7 +323,7 @@ const data4 = await client.get('/users');
                 <h2>Cache Invalidation</h2>
                 <CodeBlock code={`const cache = cachePlugin({ ttl: 60000 });
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [cache]
 });
 

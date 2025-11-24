@@ -8,14 +8,14 @@ interface IntroductionPageProps {
 }
 
 export function IntroductionPage({ pageId }: IntroductionPageProps) {
-    if (pageId === 'what-is-fastclient') {
+    if (pageId === 'what-is-fasty') {
         return (
             <DocLayout
-                title="What is FastClient?"
-                description="Learn about FastClient and its core features"
+                title="What is fasty?"
+                description="Learn about fasty and its core features"
             >
                 <p>
-                    FastClient is a modern, lightweight HTTP client library built for JavaScript and TypeScript. It provides a simple,
+                    fasty is a modern, lightweight HTTP client library built for JavaScript and TypeScript. It provides a simple,
                     intuitive API for making HTTP requests while maintaining excellent performance and a tiny bundle size.
                 </p>
 
@@ -32,19 +32,19 @@ export function IntroductionPage({ pageId }: IntroductionPageProps) {
 
                 <h3>Tiny Bundle Size</h3>
                 <p>
-                    At just 8.2 KB gzipped, FastClient is one of the smallest full-featured HTTP clients available.
+                    At just 8.2 KB gzipped, fasty is one of the smallest full-featured HTTP clients available.
                     The core is tree-shakeable, so you only bundle what you use.
                 </p>
 
                 <h3>Plugin Architecture</h3>
                 <p>
-                    FastClient's plugin system allows you to extend functionality without bloating the core.
+                    fasty's plugin system allows you to extend functionality without bloating the core.
                     Built-in plugins include retry logic, caching, authentication, and more.
                 </p>
 
-                <CodeBlock code={`import { FastClient, retryPlugin, cachePlugin } from 'fastclient';
+                <CodeBlock code={`import { fasty, retryPlugin, cachePlugin } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [
     retryPlugin({ retries: 3 }),
@@ -54,7 +54,7 @@ const client = new FastClient({
 
                 <h3>TypeScript-First</h3>
                 <p>
-                    Built with TypeScript from the ground up, FastClient provides excellent type safety and IntelliSense support.
+                    Built with TypeScript from the ground up, fasty provides excellent type safety and IntelliSense support.
                 </p>
 
                 <CodeBlock code={`interface User {
@@ -70,11 +70,11 @@ console.log(user.name); // TypeScript knows this is a string`} />
         );
     }
 
-    if (pageId === 'why-fastclient') {
+    if (pageId === 'why-fasty') {
         return (
             <DocLayout
-                title="Why FastClient exists"
-                description="Understanding the motivation behind FastClient"
+                title="Why fasty exists"
+                description="Understanding the motivation behind fasty"
             >
                 <h2>The Problem</h2>
                 <p>
@@ -90,7 +90,7 @@ console.log(user.name); // TypeScript knows this is a string`} />
 
                 <h2>The Solution</h2>
                 <p>
-                    FastClient was built to provide the best of all worlds:
+                    fasty was built to provide the best of all worlds:
                 </p>
 
                 <ul>
@@ -106,13 +106,13 @@ console.log(user.name); // TypeScript knows this is a string`} />
 
                 <h3>Reduced Bundle Size</h3>
                 <p>
-                    Every kilobyte matters for web performance. By switching from axios to FastClient, you can save ~5 KB in your bundle,
+                    Every kilobyte matters for web performance. By switching from axios to fasty, you can save ~5 KB in your bundle,
                     leading to faster page loads and better user experience.
                 </p>
 
                 <h3>Better Performance in Node</h3>
                 <p>
-                    FastClient automatically uses keep-alive agents in Node.js, reducing connection overhead and improving throughput
+                    fasty automatically uses keep-alive agents in Node.js, reducing connection overhead and improving throughput
                     for applications making many HTTP requests.
                 </p>
 
@@ -134,15 +134,15 @@ console.log(user.name); // TypeScript knows this is a string`} />
         return (
             <DocLayout
                 title="Key concepts"
-                description="Understanding FastClient's core concepts"
+                description="Understanding fasty's core concepts"
             >
                 <h2>Client Instance</h2>
                 <p>
-                    A FastClient instance is the main object you use to make HTTP requests. You create one with configuration options
+                    A fasty instance is the main object you use to make HTTP requests. You create one with configuration options
                     and then use it to make multiple requests.
                 </p>
 
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000,
   headers: {
@@ -152,7 +152,7 @@ console.log(user.name); // TypeScript knows this is a string`} />
 
                 <h2>Request Methods</h2>
                 <p>
-                    FastClient provides methods for all standard HTTP verbs: GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS.
+                    fasty provides methods for all standard HTTP verbs: GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS.
                 </p>
 
                 <CodeBlock code={`// GET request
@@ -172,13 +172,13 @@ await client.delete('/users/123');`} />
 
                 <h2>Plugins</h2>
                 <p>
-                    Plugins extend FastClient's functionality by intercepting requests and responses. They can modify requests,
+                    Plugins extend fasty's functionality by intercepting requests and responses. They can modify requests,
                     handle errors, cache responses, and more.
                 </p>
 
-                <CodeBlock code={`import { retryPlugin, cachePlugin, authPlugin } from 'fastclient/plugins';
+                <CodeBlock code={`import { retryPlugin, cachePlugin, authPlugin } from 'fasty/plugins';
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     retryPlugin({ retries: 3, backoff: 'exponential' }),
     cachePlugin({ ttl: 60000 }),
@@ -188,13 +188,13 @@ const client = new FastClient({
 
                 <h2>Transports</h2>
                 <p>
-                    Transports are the underlying mechanism for making HTTP requests. FastClient automatically selects the best
+                    Transports are the underlying mechanism for making HTTP requests. fasty automatically selects the best
                     transport for your runtime (browser fetch, Node http/https, etc.).
                 </p>
 
                 <h2>Error Handling</h2>
                 <p>
-                    FastClient throws errors for failed requests, making it easy to handle errors with try/catch blocks.
+                    fasty throws errors for failed requests, making it easy to handle errors with try/catch blocks.
                 </p>
 
                 <CodeBlock code={`try {
@@ -211,7 +211,7 @@ const client = new FastClient({
 
                 <h2>Type Safety</h2>
                 <p>
-                    FastClient is built with TypeScript and provides full type safety for requests and responses.
+                    fasty is built with TypeScript and provides full type safety for requests and responses.
                 </p>
 
                 <CodeBlock code={`interface User {
@@ -233,11 +233,11 @@ console.log(user.invalid);`} />
         return (
             <DocLayout
                 title="Architecture diagram"
-                description="Understanding FastClient's internal architecture"
+                description="Understanding fasty's internal architecture"
             >
                 <h2>High-Level Architecture</h2>
                 <p>
-                    FastClient is designed with a layered architecture that separates concerns and allows for maximum flexibility.
+                    fasty is designed with a layered architecture that separates concerns and allows for maximum flexibility.
                 </p>
 
                 <div className="my-8 p-8 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
@@ -251,7 +251,7 @@ console.log(user.invalid);`} />
                             <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
                         </div>
                         <ArchitectureLayer
-                            title="FastClient API"
+                            title="fasty API"
                             description="get(), post(), put(), delete(), etc."
                             color="purple"
                         />
@@ -316,7 +316,7 @@ console.log(user.invalid);`} />
 
                 <h2>Transport Selection</h2>
                 <p>
-                    FastClient automatically detects the runtime environment and selects the appropriate transport:
+                    fasty automatically detects the runtime environment and selects the appropriate transport:
                 </p>
 
                 <ul>

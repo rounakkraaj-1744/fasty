@@ -42,7 +42,7 @@ export function AdvancedUsagePage({ pageId }: AdvancedUsagePageProps) {
   }
 };
 
-const client = new FastClient({
+const client = new fasty({
   transport: customTransport
 });`} />
       </DocLayout>
@@ -57,7 +57,7 @@ const client = new FastClient({
       >
         <h2>Using Plugins as Interceptors</h2>
         <p>
-          FastClient uses plugins for interceptor functionality:
+          fasty uses plugins for interceptor functionality:
         </p>
 
         <CodeBlock code={`const interceptorPlugin = () => ({
@@ -83,7 +83,7 @@ const client = new FastClient({
   }
 });
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [interceptorPlugin()]
 });`} />
 
@@ -167,9 +167,9 @@ const results = await client.batch([
 ]);`} />
 
         <h2>Concurrency Limiting</h2>
-        <CodeBlock code={`import { concurrencyPlugin } from 'fastclient/plugins';
+        <CodeBlock code={`import { concurrencyPlugin } from 'fasty/plugins';
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     concurrencyPlugin({ maxConcurrent: 5 })
   ]
@@ -192,9 +192,9 @@ await Promise.all(requests);`} />
         description="Protect your app from cascading failures"
       >
         <h2>Circuit Breaker Plugin</h2>
-        <CodeBlock code={`import { circuitBreakerPlugin } from 'fastclient/plugins';
+        <CodeBlock code={`import { circuitBreakerPlugin } from 'fasty/plugins';
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     circuitBreakerPlugin({
       threshold: 5,        // Open after 5 failures
@@ -226,10 +226,10 @@ const client = new FastClient({
       >
         <h2>Create a Client Instance</h2>
         <CodeBlock code={`// src/lib/api.ts
-import { FastClient } from 'fastclient';
-import { retryPlugin, cachePlugin } from 'fastclient/plugins';
+import { fasty } from 'fasty';
+import { retryPlugin, cachePlugin } from 'fasty/plugins';
 
-export const apiClient = new FastClient({
+export const apiClient = new fasty({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: 5000,
   plugins: [
@@ -331,14 +331,14 @@ function UserProfile({ userId }: { userId: number }) {
     return (
       <DocLayout 
         title="Using with Node server frameworks"
-        description="Server-side FastClient usage"
+        description="Server-side fasty usage"
       >
         <h2>Express</h2>
         <CodeBlock code={`import express from 'express';
-import { FastClient } from 'fastclient';
+import { fasty } from 'fasty';
 
 const app = express();
-const apiClient = new FastClient({
+const apiClient = new fasty({
   baseURL: 'https://api.external.com',
   timeout: 5000
 });
@@ -356,10 +356,10 @@ app.listen(3000);`} />
 
         <h2>Next.js API Route</h2>
         <CodeBlock code={`// pages/api/users/[id].ts
-import { FastClient } from 'fastclient';
+import { fasty } from 'fasty';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: process.env.API_URL
 });
 
@@ -377,10 +377,10 @@ export default async function handler(
 
         <h2>Fastify</h2>
         <CodeBlock code={`import Fastify from 'fastify';
-import { FastClient } from 'fastclient';
+import { fasty } from 'fasty';
 
 const fastify = Fastify();
-const apiClient = new FastClient({
+const apiClient = new fasty({
   baseURL: 'https://api.external.com'
 });
 

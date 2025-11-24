@@ -21,8 +21,8 @@ interface PageProps {
 
 const slugToComponentMap: Record<string, React.ComponentType<{ pageId: string }> | React.ComponentType> = {
   // Introduction
-  'what-is-fastclient': IntroductionPage,
-  'why-fastclient': IntroductionPage,
+  'what-is-fasty': IntroductionPage,
+  'why-fasty': IntroductionPage,
   'key-concepts': IntroductionPage,
   'architecture': IntroductionPage,
   
@@ -99,7 +99,7 @@ export default async function DocPage({ params }: PageProps) {
 
   // Check if component needs pageId prop
   const needsPageId = [
-    'what-is-fastclient', 'why-fastclient', 'key-concepts', 'architecture',
+    'what-is-fasty', 'why-fasty', 'key-concepts', 'architecture',
     'quick-start', 'basic-requests', 'error-handling', 'timeouts', 'json-parsing',
     'constructor', 'get-method', 'post-method', 'put-method', 'delete-method', 'request-options', 'response-structure',
     'how-plugins-work', 'plugin-lifecycle', 'plugin-interface', 'writing-plugins',

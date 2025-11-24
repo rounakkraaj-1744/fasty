@@ -15,14 +15,14 @@ export function ExamplesPage({ pageId }: ExamplesPageProps) {
         description="Complete REST API client example"
       >
         <h2>REST Client Class</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
-import { retryPlugin, cachePlugin } from 'fastclient/plugins';
+        <CodeBlock code={`import { fasty } from 'fasty';
+import { retryPlugin, cachePlugin } from 'fasty/plugins';
 
 export class UserAPI {
-  private client: FastClient;
+  private client: fasty;
 
   constructor(baseURL: string, apiKey: string) {
-    this.client = new FastClient({
+    this.client = new fasty({
       baseURL,
       headers: {
         'Authorization': \`Bearer \${apiKey}\`,
@@ -73,7 +73,7 @@ const newUser = await api.createUser({ name: 'John', email: 'john@example.com' }
         description="Type-safe GitHub API client"
       >
         <h2>GitHub Client</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
+        <CodeBlock code={`import { fasty } from 'fasty';
 
 interface GitHubUser {
   login: string;
@@ -92,10 +92,10 @@ interface GitHubRepo {
 }
 
 export class GitHubClient {
-  private client: FastClient;
+  private client: fasty;
 
   constructor(token?: string) {
-    this.client = new FastClient({
+    this.client = new fasty({
       baseURL: 'https://api.github.com',
       headers: {
         'Accept': 'application/vnd.github.v3+json',
@@ -134,7 +134,7 @@ const github = new GitHubClient('your-github-token');
 
 const user = await github.getUser('octocat');
 const repos = await github.getUserRepos('octocat');
-const results = await github.searchRepos('fastclient');`} />
+const results = await github.searchRepos('fasty');`} />
       </DocLayout>
     );
   }
@@ -147,10 +147,10 @@ const results = await github.searchRepos('fastclient');`} />
       >
         <h2>API Client Setup</h2>
         <CodeBlock code={`// lib/api.ts
-import { FastClient } from 'fastclient';
-import { cachePlugin } from 'fastclient/plugins';
+import { fasty } from 'fasty';
+import { cachePlugin } from 'fasty/plugins';
 
-export const apiClient = new FastClient({
+export const apiClient = new fasty({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   plugins: [
     cachePlugin({ ttl: 60000 })
@@ -207,10 +207,10 @@ export default function UserPage({ params }: { params: { id: string } }) {
 
         <h2>API Route</h2>
         <CodeBlock code={`// app/api/users/route.ts
-import { FastClient } from 'fastclient';
+import { fasty } from 'fasty';
 import { NextResponse } from 'next/server';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: process.env.API_URL
 });
 
@@ -236,9 +236,9 @@ export async function GET() {
         description="Edge runtime examples"
       >
         <h2>Cloudflare Worker</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
+        <CodeBlock code={`import { fasty } from 'fasty';
 
-const apiClient = new FastClient({
+const apiClient = new fasty({
   baseURL: 'https://api.example.com'
 });
 
@@ -264,7 +264,7 @@ export default {
         <h2>With Environment Variables</h2>
         <CodeBlock code={`export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const client = new FastClient({
+    const client = new fasty({
       baseURL: env.API_URL,
       headers: {
         'Authorization': \`Bearer \${env.API_TOKEN}\`
@@ -277,13 +277,13 @@ export default {
 };`} />
 
         <h2>Vercel Edge Function</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
+        <CodeBlock code={`import { fasty } from 'fasty';
 
 export const config = {
   runtime: 'edge'
 };
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: process.env.API_URL
 });
 
@@ -308,9 +308,9 @@ export default async function handler(request: Request) {
         description="Optimized Node.js usage"
       >
         <h2>Basic Setup</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
+        <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   // Keep-alive is enabled by default in Node
 });
@@ -330,7 +330,7 @@ async function fetchUsers() {
 const users = await fetchUsers();`} />
 
         <h2>Custom Agent Configuration</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
+        <CodeBlock code={`import { fasty } from 'fasty';
 import https from 'https';
 
 const httpsAgent = new https.Agent({
@@ -341,16 +341,16 @@ const httpsAgent = new https.Agent({
   timeout: 60000
 });
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   httpsAgent
 });`} />
 
         <h2>Bulk Data Fetching</h2>
-        <CodeBlock code={`import { FastClient } from 'fastclient';
-import { concurrencyPlugin } from 'fastclient/plugins';
+        <CodeBlock code={`import { fasty } from 'fasty';
+import { concurrencyPlugin } from 'fasty/plugins';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [
     concurrencyPlugin({ maxConcurrent: 10 })

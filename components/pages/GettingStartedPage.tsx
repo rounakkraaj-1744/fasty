@@ -12,16 +12,16 @@ export function GettingStartedPage({ pageId }: GettingStartedPageProps) {
         return (
             <DocLayout
                 title="Quick start"
-                description="Make your first request with FastClient"
+                description="Make your first request with fasty"
             >
                 <h2>Create a client</h2>
                 <p>
-                    First, import and create a FastClient instance:
+                    First, import and create a fasty instance:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000,
   headers: {
@@ -82,7 +82,7 @@ console.log(response.headers);     // Headers object`} />
 
                 <h2>That's it!</h2>
                 <p>
-                    You've made your first requests with FastClient. Continue reading to learn about error handling,
+                    You've made your first requests with fasty. Continue reading to learn about error handling,
                     timeouts, and more advanced features.
                 </p>
             </DocLayout>
@@ -207,11 +207,11 @@ await client.delete('/posts', {
         return (
             <DocLayout
                 title="Error handling"
-                description="Learn how to handle errors in FastClient"
+                description="Learn how to handle errors in fasty"
             >
                 <h2>Basic Error Handling</h2>
                 <p>
-                    FastClient throws errors for failed requests. Use try/catch to handle them:
+                    fasty throws errors for failed requests. Use try/catch to handle them:
                 </p>
 
                 <CodeBlock code={`try {
@@ -244,7 +244,7 @@ await client.delete('/posts', {
 
                 <h2>Error Object Properties</h2>
                 <p>
-                    FastClient errors include useful properties:
+                    fasty errors include useful properties:
                 </p>
 
                 <CodeBlock code={`try {
@@ -290,7 +290,7 @@ await client.delete('/posts', {
                     You can create a global error handler using a plugin:
                 </p>
 
-                <CodeBlock code={`import { FastClient } from 'fastclient';
+                <CodeBlock code={`import { fasty } from 'fasty';
 
 const errorHandlerPlugin = () => ({
   onError: async (error) => {
@@ -305,7 +305,7 @@ const errorHandlerPlugin = () => ({
   }
 });
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [errorHandlerPlugin()]
 });`} />
@@ -315,9 +315,9 @@ const client = new FastClient({
                     Use the retry plugin to automatically retry failed requests:
                 </p>
 
-                <CodeBlock code={`import { retryPlugin } from 'fastclient/plugins';
+                <CodeBlock code={`import { retryPlugin } from 'fasty/plugins';
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     retryPlugin({
       retries: 3,
@@ -344,7 +344,7 @@ const data = await client.get('/unstable-endpoint');`} />
                     Set a default timeout for all requests when creating the client:
                 </p>
 
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000  // 5 seconds for all requests
 });`} />
@@ -425,11 +425,11 @@ try {
         return (
             <DocLayout
                 title="JSON parsing behavior"
-                description="How FastClient handles JSON responses"
+                description="How fasty handles JSON responses"
             >
                 <h2>Automatic JSON Parsing</h2>
                 <p>
-                    FastClient automatically parses JSON responses based on the <code>Content-Type</code> header:
+                    fasty automatically parses JSON responses based on the <code>Content-Type</code> header:
                 </p>
 
                 <CodeBlock code={`// Response has Content-Type: application/json
@@ -456,7 +456,7 @@ console.log(user.invalid); // ✗ TypeScript error`} />
 
                 <h2>Handling Non-JSON Responses</h2>
                 <p>
-                    For non-JSON responses, FastClient returns the raw response:
+                    For non-JSON responses, fasty returns the raw response:
                 </p>
 
                 <CodeBlock code={`// Get plain text
@@ -493,7 +493,7 @@ const blob = await client.get('/api/image', {
   }
 });
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [jsonTransformPlugin()]
 });
 

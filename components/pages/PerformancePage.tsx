@@ -12,17 +12,17 @@ export function PerformancePage({ pageId }: PerformancePageProps) {
     if (pageId === 'performance-overview') {
         return (
             <DocLayout
-                title="How FastClient reduces latency"
-                description="Performance optimizations in FastClient"
+                title="How fasty reduces latency"
+                description="Performance optimizations in fasty"
             >
                 <h2>Overview</h2>
                 <p>
-                    FastClient is designed for performance from the ground up. Here's how it achieves excellent performance:
+                    fasty is designed for performance from the ground up. Here's how it achieves excellent performance:
                 </p>
 
                 <h2>1. Keep-Alive Connection Pooling</h2>
                 <p>
-                    In Node.js, FastClient automatically uses keep-alive agents to reuse TCP connections:
+                    In Node.js, fasty automatically uses keep-alive agents to reuse TCP connections:
                 </p>
 
                 <div className="my-6 p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
@@ -50,7 +50,7 @@ export function PerformancePage({ pageId }: PerformancePageProps) {
 
                 <h2>2. DNS Caching</h2>
                 <p>
-                    FastClient caches DNS lookups in Node.js, eliminating repeated DNS resolution overhead.
+                    fasty caches DNS lookups in Node.js, eliminating repeated DNS resolution overhead.
                 </p>
 
                 <CodeBlock code={`// First request: DNS lookup + request (~80ms)
@@ -65,7 +65,7 @@ await client.get('https://api.example.com/comments');`} />
                     When HTTP/2 is available, multiple requests can be multiplexed over a single connection:
                 </p>
 
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   http2: true
 });
 
@@ -78,14 +78,14 @@ await Promise.all([
 
                 <h2>4. Minimal Bundle Size</h2>
                 <p>
-                    At just 8.2 KB gzipped, FastClient loads fast and doesn't bloat your bundle:
+                    At just 8.2 KB gzipped, fasty loads fast and doesn't bloat your bundle:
                 </p>
 
                 <div className="my-6 p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="text-center">
                             <div className="text-3xl mb-2">8.2 KB</div>
-                            <div className="text-sm text-slate-600 dark:text-slate-400">FastClient</div>
+                            <div className="text-sm text-slate-600 dark:text-slate-400">fasty</div>
                         </div>
                         <div className="text-center">
                             <div className="text-3xl mb-2">13.4 KB</div>
@@ -139,17 +139,17 @@ const data = await client.get('https://api.example.com/users');`} />
 
     if (pageId === 'benchmarks') {
         const bundleSizeData = [
-            { name: 'FastClient', size: 8.2 },
+            { name: 'fasty', size: 8.2 },
             { name: 'ky', size: 11.5 },
             { name: 'axios', size: 13.4 },
             { name: 'superagent', size: 19.8 },
         ];
 
         const requestTimeData = [
-            { name: '1 req', fastclient: 150, axios: 155, fetch: 145 },
-            { name: '10 req', fastclient: 600, axios: 1200, fetch: 1400 },
-            { name: '50 req', fastclient: 2100, axios: 5800, fetch: 6900 },
-            { name: '100 req', fastclient: 5100, axios: 11500, fetch: 13800 },
+            { name: '1 req', fasty: 150, axios: 155, fetch: 145 },
+            { name: '10 req', fasty: 600, axios: 1200, fetch: 1400 },
+            { name: '50 req', fasty: 2100, axios: 5800, fetch: 6900 },
+            { name: '100 req', fasty: 5100, axios: 11500, fetch: 13800 },
         ];
 
         return (
@@ -199,7 +199,7 @@ const data = await client.get('https://api.example.com/users');`} />
                                 }}
                             />
                             <Legend />
-                            <Line type="monotone" dataKey="fastclient" stroke="#8b5cf6" strokeWidth={2} name="FastClient" />
+                            <Line type="monotone" dataKey="fasty" stroke="#8b5cf6" strokeWidth={2} name="fasty" />
                             <Line type="monotone" dataKey="axios" stroke="#f59e0b" strokeWidth={2} name="axios" />
                             <Line type="monotone" dataKey="fetch" stroke="#64748b" strokeWidth={2} name="fetch" />
                         </LineChart>
@@ -212,7 +212,7 @@ const data = await client.get('https://api.example.com/users');`} />
                         <thead>
                             <tr className="border-b border-slate-200 dark:border-slate-800">
                                 <th className="text-left p-3">Metric</th>
-                                <th className="text-left p-3">FastClient</th>
+                                <th className="text-left p-3">fasty</th>
                                 <th className="text-left p-3">axios</th>
                                 <th className="text-left p-3">fetch</th>
                             </tr>
@@ -270,8 +270,8 @@ const data = await client.get('https://api.example.com/users');`} />
                 </ul>
 
                 <h2>Run Your Own Benchmarks</h2>
-                <CodeBlock code={`git clone https://github.com/fastclient/fastclient
-cd fastclient
+                <CodeBlock code={`git clone https://github.com/fasty/fasty
+cd fasty
 npm install
 npm run benchmark
 

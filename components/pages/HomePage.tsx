@@ -8,10 +8,10 @@ import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 
 export function HomePage() {
-    const exampleCode = `import { FastClient } from 'fastclient';
+    const exampleCode = `import { fasty } from 'fasty';
 
 // Create a client instance
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000,
   plugins: [retryPlugin(), cachePlugin()]
@@ -35,7 +35,7 @@ const newPost = await client.post('/posts', {
                     </Badge>
 
                     <h1 className="text-6xl md:text-7xl mb-6 bg-linear-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                        FastClient
+                        fasty
                     </h1>
 
                     <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ const newPost = await client.post('/posts', {
                             </Link>
                         </Button>
                         <Button size="lg" variant="outline" asChild>
-                            <a href="https://github.com/fastclient/fastclient" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/fasty/fasty" target="_blank" rel="noopener noreferrer">
                                 <Github className="w-4 h-4 mr-2" />
                                 GitHub
                             </a>
@@ -84,7 +84,7 @@ const newPost = await client.post('/posts', {
             {/* Features Grid */}
             <section className="container mx-auto px-4 py-16">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl mb-4">Why FastClient?</h2>
+                    <h2 className="text-4xl mb-4">Why fasty?</h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400">
                         Built for performance and developer experience
                     </p>
@@ -129,7 +129,7 @@ const newPost = await client.post('/posts', {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl mb-4">How does it compare?</h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400">
-                        FastClient vs popular alternatives
+                        fasty vs popular alternatives
                     </p>
                 </div>
 
@@ -138,7 +138,7 @@ const newPost = await client.post('/posts', {
                         <thead>
                             <tr className="border-b border-slate-200 dark:border-slate-800">
                                 <th className="text-left p-4">Feature</th>
-                                <th className="text-center p-4">FastClient</th>
+                                <th className="text-center p-4">fasty</th>
                                 <th className="text-center p-4">axios</th>
                                 <th className="text-center p-4">fetch</th>
                             </tr>
@@ -146,49 +146,49 @@ const newPost = await client.post('/posts', {
                         <tbody>
                             <ComparisonRow
                                 feature="Bundle size (gzipped)"
-                                fastclient="8.2 KB"
+                                fasty="8.2 KB"
                                 axios="13.4 KB"
                                 fetch="0 KB (native)"
                             />
                             <ComparisonRow
                                 feature="Plugin system"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="Interceptors"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="Keep-alive in Node"
-                                fastclient="✓ Auto"
+                                fasty="✓ Auto"
                                 axios="✓ Manual"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="TypeScript support"
-                                fastclient="✓ Native"
+                                fasty="✓ Native"
                                 axios="✓ @types"
                                 fetch="✓ Native"
                             />
                             <ComparisonRow
                                 feature="Tree-shakeable"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="Partial"
                                 fetch="N/A"
                             />
                             <ComparisonRow
                                 feature="Edge runtime support"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="✗"
                                 fetch="✓"
                             />
                             <ComparisonRow
                                 feature="Built-in retry"
-                                fastclient="✓ Plugin"
+                                fasty="✓ Plugin"
                                 axios="3rd party"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="Built-in cache"
-                                fastclient="✓ Plugin"
+                                fasty="✓ Plugin"
                                 axios="3rd party"
                                 fetch="✗"
                             />
@@ -202,7 +202,7 @@ const newPost = await client.post('/posts', {
                 <div className="max-w-3xl mx-auto text-center bg-linear-to-r from-violet-500 to-purple-600 rounded-2xl p-12 text-white">
                     <h2 className="text-4xl mb-4">Ready to get started?</h2>
                     <p className="text-lg mb-8 opacity-90">
-                        Install FastClient and start building faster apps today.
+                        Install fasty and start building faster apps today.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <Button size="lg" variant="secondary" asChild>
@@ -212,7 +212,7 @@ const newPost = await client.post('/posts', {
                             </Link>
                         </Button>
                         <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
-                            <a href="https://github.com/fastclient/fastclient" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/fasty/fasty" target="_blank" rel="noopener noreferrer">
                                 View on GitHub
                             </a>
                         </Button>
@@ -237,11 +237,11 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
     );
 }
 
-function ComparisonRow({ feature, fastclient, axios, fetch }: { feature: string; fastclient: string; axios: string; fetch: string }) {
+function ComparisonRow({ feature, fasty, axios, fetch }: { feature: string; fasty: string; axios: string; fetch: string }) {
     return (
         <tr className="border-b border-slate-200 dark:border-slate-800">
             <td className="p-4 text-slate-600 dark:text-slate-400">{feature}</td>
-            <td className="p-4 text-center text-violet-600 dark:text-violet-400">{fastclient}</td>
+            <td className="p-4 text-center text-violet-600 dark:text-violet-400">{fasty}</td>
             <td className="p-4 text-center text-slate-600 dark:text-slate-400">{axios}</td>
             <td className="p-4 text-center text-slate-600 dark:text-slate-400">{fetch}</td>
         </tr>

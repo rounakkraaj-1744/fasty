@@ -12,19 +12,19 @@ export function PluginSystemPage({ pageId }: PluginSystemPageProps) {
         return (
             <DocLayout
                 title="How plugins work"
-                description="Understanding FastClient's plugin architecture"
+                description="Understanding fasty's plugin architecture"
             >
                 <h2>What are Plugins?</h2>
                 <p>
-                    Plugins extend FastClient's functionality by intercepting and modifying requests, responses, and errors.
+                    Plugins extend fasty's functionality by intercepting and modifying requests, responses, and errors.
                     They provide a clean way to add features like retry logic, caching, authentication, logging, and more
                     without modifying the core library.
                 </p>
 
                 <h2>Basic Plugin Usage</h2>
-                <CodeBlock code={`import { FastClient, retryPlugin, cachePlugin } from 'fastclient';
+                <CodeBlock code={`import { fasty, retryPlugin, cachePlugin } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseURL: 'https://api.example.com',
   plugins: [
     retryPlugin({ retries: 3 }),
@@ -201,7 +201,7 @@ App
                 </div>
 
                 <h2>Hooks Execution Order</h2>
-                <CodeBlock code={`const client = new FastClient({
+                <CodeBlock code={`const client = new fasty({
   plugins: [
     pluginA(),  // Position 0
     pluginB(),  // Position 1
@@ -404,7 +404,7 @@ App
 }
 
 // Usage
-const client = new FastClient({
+const client = new fasty({
   plugins: [loggingPlugin({ logRequests: true, logResponses: true })]
 });`} />
 
@@ -439,7 +439,7 @@ const client = new FastClient({
 }
 
 // Usage
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     authTokenPlugin(async (forceRefresh) => {
       // Your token logic here
@@ -489,7 +489,7 @@ const client = new FastClient({
                 </ul>
 
                 <h2>TypeScript Plugin Example</h2>
-                <CodeBlock code={`import type { Plugin, RequestConfig, Response } from 'fastclient';
+                <CodeBlock code={`import type { Plugin, RequestConfig, Response } from 'fasty';
 
 interface TimingPluginOptions {
   logToConsole?: boolean;

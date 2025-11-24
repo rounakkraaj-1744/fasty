@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                         <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
                             <Zap size={18} fill="currentColor" />
                         </div>
-                        <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">FastClient</span>
+                        <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">fasty</span>
                     </Link>
 
                     <div className="hidden md:flex items-center gap-6 ml-8 text-sm font-medium text-slate-600 dark:text-slate-400">

@@ -11,7 +11,7 @@ export const ArchDiagram: React.FC = () => (
 
             {/* Core */}
             <rect x="220" y="20" width="160" height="160" rx="8" fill="none" stroke="currentColor" className="text-primary-500" strokeWidth="2" strokeDasharray="4 4" />
-            <text x="300" y="165" textAnchor="middle" className="text-xs fill-slate-500 uppercase tracking-widest font-semibold">FastClient Core</text>
+            <text x="300" y="165" textAnchor="middle" className="text-xs fill-slate-500 uppercase tracking-widest font-semibold">fasty Core</text>
 
             {/* Components */}
             <rect x="50" y="75" width="100" height="50" rx="6" className="fill-white dark:fill-slate-800 stroke-slate-300 dark:stroke-slate-600" strokeWidth="2" />

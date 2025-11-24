@@ -7,7 +7,7 @@ export function ChangelogPage() {
     return (
         <DocLayout
             title="Changelog"
-            description="All notable changes to FastClient"
+            description="All notable changes to fasty"
         >
             <p>
                 All notable changes to this project will be documented here. The format is based on{' '}
@@ -169,7 +169,7 @@ export function ChangelogPage() {
                     </li>
                     <li>
                         <a href="#" className="text-violet-600 dark:text-violet-400 hover:underline">
-                            Migrating from axios to FastClient
+                            Migrating from axios to fasty
                         </a>
                     </li>
                     <li>

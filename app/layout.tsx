@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FastClient - Modern HTTP Client",
+  title: "fasty - Modern HTTP Client",
   description: "A tiny, blazing-fast, plugin-powered HTTP client for modern JavaScript runtimes",
 };
 

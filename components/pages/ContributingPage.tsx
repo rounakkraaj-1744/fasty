@@ -7,11 +7,11 @@ export function ContributingPage() {
   return (
     <DocLayout 
       title="Contributing"
-      description="Help make FastClient better"
+      description="Help make fasty better"
     >
       <h2>Welcome!</h2>
       <p>
-        Thank you for considering contributing to FastClient! We welcome contributions from everyone, 
+        Thank you for considering contributing to fasty! We welcome contributions from everyone, 
         whether it's a bug report, feature request, documentation improvement, or code contribution.
       </p>
 
@@ -20,7 +20,7 @@ export function ContributingPage() {
       <h3>1. Fork and Clone</h3>
       <CodeBlock code={`# Fork the repository on GitHub, then clone your fork
 git clone https://github.com/rounakkraaj-1744/fasty.git
-cd fastclient
+cd fasty
 
 # Add the upstream repository
 git remote add upstream https://github.com/rounakkraaj-1744/fasty.git`} language="bash" />
@@ -34,9 +34,9 @@ git remote add upstream https://github.com/rounakkraaj-1744/fasty.git`} language
       <h2>Development</h2>
 
       <h3>Project Structure</h3>
-      <CodeBlock code={`fastclient/
+      <CodeBlock code={`fasty/
 ├── src/
-│   ├── core/           # Core FastClient implementation
+│   ├── core/           # Core fasty implementation
 │   ├── plugins/        # Built-in plugins
 │   ├── transports/     # Transport implementations
 │   ├── types/          # TypeScript type definitions
@@ -123,16 +123,16 @@ function request(config: any): any {
         <li>Mock external dependencies</li>
       </ul>
 
-      <CodeBlock code={`describe('FastClient', () => {
+      <CodeBlock code={`describe('fasty', () => {
   describe('get()', () => {
     it('should make a GET request to the specified URL', async () => {
-      const client = new FastClient({ baseURL: 'https://api.example.com' });
+      const client = new fasty({ baseURL: 'https://api.example.com' });
       const response = await client.get('/users');
       expect(response).toBeDefined();
     });
 
     it('should throw an error for 404 responses', async () => {
-      const client = new FastClient({ baseURL: 'https://api.example.com' });
+      const client = new fasty({ baseURL: 'https://api.example.com' });
       await expect(client.get('/not-found')).rejects.toThrow();
     });
   });
@@ -202,7 +202,7 @@ git commit -m "feat: add retry plugin with exponential backoff"
         When reporting bugs, please include:
       </p>
       <ul>
-        <li>FastClient version</li>
+        <li>fasty version</li>
         <li>Node.js/browser version</li>
         <li>Operating system</li>
         <li>Minimal reproduction code</li>

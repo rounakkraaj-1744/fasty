@@ -13,14 +13,14 @@ export function FAQPage() {
   return (
     <DocLayout
       title="FAQ"
-      description="Frequently asked questions about FastClient"
+      description="Frequently asked questions about fasty"
     >
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Why not axios?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              Axios is a great library, but FastClient offers several advantages:
+              Axios is a great library, but fasty offers several advantages:
             </p>
             <ul className="space-y-2">
               <li><strong>Smaller bundle size</strong> - 8.2 KB vs 13.4 KB gzipped</li>
@@ -37,7 +37,7 @@ export function FAQPage() {
           <AccordionTrigger>Is this just fetch?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              No, FastClient is much more than a fetch wrapper:
+              No, fasty is much more than a fetch wrapper:
             </p>
             <ul className="space-y-2">
               <li><strong>Plugin system</strong> - Retry, caching, auth, and custom plugins</li>
@@ -54,15 +54,15 @@ export function FAQPage() {
           <AccordionTrigger>Is the core tree-shakeable?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              Yes! FastClient is fully tree-shakeable. When using ES modules, your bundler will only include
+              Yes! fasty is fully tree-shakeable. When using ES modules, your bundler will only include
               the parts you actually use.
             </p>
             <CodeBlock code={`// Only imports what you use
-import { FastClient } from 'fastclient';
-import { retryPlugin } from 'fastclient/plugins';
+import { fasty } from 'fasty';
+import { retryPlugin } from 'fasty/plugins';
 
 // Unused plugins won't be in your bundle
-const client = new FastClient({
+const client = new fasty({
   plugins: [retryPlugin()]
 });`} />
           </AccordionContent>
@@ -72,7 +72,7 @@ const client = new FastClient({
           <AccordionTrigger>Can I add interceptors?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              Yes! FastClient uses a plugin system that's more powerful than traditional interceptors:
+              Yes! fasty uses a plugin system that's more powerful than traditional interceptors:
             </p>
             <CodeBlock code={`const interceptorPlugin = () => ({
   onRequest: (config) => {
@@ -94,7 +94,7 @@ const client = new FastClient({
   }
 });
 
-const client = new FastClient({
+const client = new fasty({
   plugins: [interceptorPlugin()]
 });`} />
           </AccordionContent>
@@ -104,7 +104,7 @@ const client = new FastClient({
           <AccordionTrigger>Does it work with TypeScript?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              Yes! FastClient is written in TypeScript and includes full type definitions.
+              Yes! fasty is written in TypeScript and includes full type definitions.
               No @types package needed.
             </p>
             <CodeBlock code={`interface User {
@@ -127,10 +127,10 @@ console.log(user.name.toUpperCase());`} />
             <p className="mb-4">
               Use the built-in auth plugin or create a custom one:
             </p>
-            <CodeBlock code={`import { authPlugin } from 'fastclient/plugins';
+            <CodeBlock code={`import { authPlugin } from 'fasty/plugins';
 
 // Option 1: Built-in auth plugin
-const client = new FastClient({
+const client = new fasty({
   plugins: [
     authPlugin({
       getToken: async () => localStorage.getItem('token')
@@ -163,9 +163,9 @@ const customAuthPlugin = () => ({
           <AccordionTrigger>What about CORS?</AccordionTrigger>
           <AccordionContent>
             <p className="mb-4">
-              FastClient handles CORS the same way as fetch. Enable credentials if needed:
+              fasty handles CORS the same way as fetch. Enable credentials if needed:
             </p>
-            <CodeBlock code={`const client = new FastClient({
+            <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   withCredentials: true  // Include cookies in CORS requests
 });
@@ -221,7 +221,7 @@ const mockTransport = {
   }
 };
 
-const client = new FastClient({ transport: mockTransport });
+const client = new fasty({ transport: mockTransport });
 
 // Option 2: Mocking plugin
 const mockPlugin = (mocks) => ({

@@ -13,11 +13,11 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: str
     </div>
 );
     
-function ComparisonRow({ feature, fastclient, axios, fetch }: { feature: string; fastclient: string; axios: string; fetch: string }) {
+function ComparisonRow({ feature, fasty, axios, fetch }: { feature: string; fasty: string; axios: string; fetch: string }) {
     return (
         <tr className="border-b border-slate-200 dark:border-slate-800">
             <td className="p-4 text-slate-600 dark:text-slate-400">{feature}</td>
-            <td className="p-4 text-center text-violet-600 dark:text-violet-400">{fastclient}</td>
+            <td className="p-4 text-center text-violet-600 dark:text-violet-400">{fasty}</td>
             <td className="p-4 text-center text-slate-600 dark:text-slate-400">{axios}</td>
             <td className="p-4 text-center text-slate-600 dark:text-slate-400">{fetch}</td>
         </tr>
@@ -48,7 +48,7 @@ export default function Landing() {
                         </h1>
 
                         <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl leading-relaxed">
-                            FastClient is a tiny, blazing-fast, plugin-powered HTTP client designed for TypeScript. Zero dependencies. 2KB gzipped.
+                            fasty is a tiny, blazing-fast, plugin-powered HTTP client designed for TypeScript. Zero dependencies. 2KB gzipped.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -83,9 +83,9 @@ export default function Landing() {
                     </div>
                     <CodeBlock
                         language="typescript"
-                        code={`import { FastClient, retry, cache } from 'fast-client';
+                        code={`import { fasty, retry, cache } from 'fasty';
 
-const client = new FastClient({
+const client = new fasty({
   baseUrl: 'https://api.startup.com',
   plugins: [
     retry({ maxRetries: 3 }), 
@@ -104,7 +104,7 @@ console.log(data.username);`}
             <div className="container mx-auto px-4 py-24 border-t border-slate-200 dark:border-slate-900">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Everything you need, nothing you don't.</h2>
-                    <p className="text-slate-600 dark:text-slate-400">Built for the modern stack. FastClient gives you the primitives to build robust API layers without the bloat.</p>
+                    <p className="text-slate-600 dark:text-slate-400">Built for the modern stack. fasty gives you the primitives to build robust API layers without the bloat.</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
@@ -146,7 +146,7 @@ console.log(data.username);`}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl mb-4">How does it compare?</h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400">
-                        FastClient vs popular alternatives
+                        fasty vs popular alternatives
                     </p>
                 </div>
 
@@ -155,7 +155,7 @@ console.log(data.username);`}
                         <thead>
                             <tr className="border-b border-slate-200 dark:border-slate-800">
                                 <th className="text-left p-4">Feature</th>
-                                <th className="text-center p-4">FastClient</th>
+                                <th className="text-center p-4">fasty</th>
                                 <th className="text-center p-4">axios</th>
                                 <th className="text-center p-4">fetch</th>
                             </tr>
@@ -163,49 +163,49 @@ console.log(data.username);`}
                         <tbody>
                             <ComparisonRow
                                 feature="Bundle size (gzipped)"
-                                fastclient="8.2 KB"
+                                fasty="8.2 KB"
                                 axios="13.4 KB"
                                 fetch="0 KB (native)"
                             />
                             <ComparisonRow
                                 feature="Plugin system"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="Interceptors"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="Keep-alive in Node"
-                                fastclient="✓ Auto"
+                                fasty="✓ Auto"
                                 axios="✓ Manual"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="TypeScript support"
-                                fastclient="✓ Native"
+                                fasty="✓ Native"
                                 axios="✓ @types"
                                 fetch="✓ Native"
                             />
                             <ComparisonRow
                                 feature="Tree-shakeable"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="Partial"
                                 fetch="N/A"
                             />
                             <ComparisonRow
                                 feature="Edge runtime support"
-                                fastclient="✓"
+                                fasty="✓"
                                 axios="✗"
                                 fetch="✓"
                             />
                             <ComparisonRow
                                 feature="Built-in retry"
-                                fastclient="✓ Plugin"
+                                fasty="✓ Plugin"
                                 axios="3rd party"
                                 fetch="✗"
                             />
                             <ComparisonRow
                                 feature="Built-in cache"
-                                fastclient="✓ Plugin"
+                                fasty="✓ Plugin"
                                 axios="3rd party"
                                 fetch="✗"
                             />

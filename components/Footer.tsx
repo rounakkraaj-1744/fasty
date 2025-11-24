@@ -10,7 +10,7 @@ export function Footer() {
                             <div className="w-8 h-8 bg-linear-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center">
                                 <span className="text-white font-bold">FC</span>
                             </div>
-                            <span className="font-semibold">FastClient</span>
+                            <span className="font-semibold">fasty</span>
                         </div>
                         <p className="text-sm text-slate-600 dark:text-slate-400">
                             A tiny, blazing-fast, plugin-powered HTTP client for modern JavaScript runtimes.
@@ -50,7 +50,7 @@ export function Footer() {
 
                 <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-slate-600 dark:text-slate-400">
-                        © 2024 FastClient. Released under the MIT License.
+                        © 2024 fasty. Released under the MIT License.
                     </p>
 
                     <div className="flex items-center gap-4">
@@ -68,7 +68,7 @@ export function Footer() {
 
                 <div className="mt-4 text-center">
                     <p className="text-sm text-slate-500 dark:text-slate-500 flex items-center justify-center gap-1">
-                        Made with <Heart className="w-4 h-4 fill-red-500 text-red-500" /> by the FastClient team
+                        Made with <Heart className="w-4 h-4 fill-red-500 text-red-500" /> by the fasty team
                     </p>
                 </div>
             </div>
