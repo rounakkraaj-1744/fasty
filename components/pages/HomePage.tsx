@@ -10,19 +10,19 @@ import Link from 'next/link';
 export function HomePage() {
     const exampleCode = `import { fasty } from 'fasty';
 
-// Create a client instance
-const client = new fasty({
-  baseURL: 'https://api.example.com',
-  timeout: 5000,
-  plugins: [retryPlugin(), cachePlugin()]
-});
+                        // Create a client instance
+                        const client = new fasty({
+                        baseURL: 'https://api.example.com',
+                        timeout: 5000,
+                        plugins: [retryPlugin(), cachePlugin()]
+                        });
 
-// Make requests
-const user = await client.get('/users/123');
-const newPost = await client.post('/posts', {
-  title: 'Hello World',
-  content: 'My first post!'
-});`;
+                        // Make requests
+                        const user = await client.get('/users/123');
+                        const newPost = await client.post('/posts', {
+                        title: 'Hello World',
+                        content: 'My first post!'
+                        });`;
 
     return (
         <div className="w-full">
@@ -144,8 +144,7 @@ const newPost = await client.post('/posts', {
                             </tr>
                         </thead>
                         <tbody>
-                            <ComparisonRow
-                                feature="Bundle size (gzipped)"
+                            <ComparisonRow feature="Bundle size (gzipped)"
                                 fasty="8.2 KB"
                                 axios="13.4 KB"
                                 fetch="0 KB (native)"

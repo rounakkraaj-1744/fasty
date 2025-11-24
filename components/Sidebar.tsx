@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDown, ChevronRight, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, X, Zap } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -171,6 +171,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             `}>
                 <div className="p-4">
+                    {/* Close button for mobile */}
                     <Button
                         variant="ghost"
                         size="icon"
@@ -180,6 +181,21 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                         <X className="w-5 h-5" />
                     </Button>
 
+                    {/* Logo at top */}
+                    <Link 
+                        href="/" 
+                        className="flex items-center gap-2 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800 group"
+                        onClick={onClose}
+                    >
+                        <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
+                            <Zap size={18} fill="currentColor" />
+                        </div>
+                        <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+                            fasty
+                        </span>
+                    </Link>
+
+                    {/* Navigation */}
                     <nav className="space-y-1">
                         {navSections.map(section => {
                             const isExpanded = expandedSections.includes(section.title);

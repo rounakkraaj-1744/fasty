@@ -4,7 +4,7 @@ import { DocLayout } from '../layout/DocLayout';
 import { CodeBlock } from '@/components/CodeBlock';
 
 interface IntroductionPageProps {
-    pageId: string;  // Changed from PageId to string
+    pageId: string;
 }
 
 export function IntroductionPage({ pageId }: IntroductionPageProps) {
@@ -14,35 +14,73 @@ export function IntroductionPage({ pageId }: IntroductionPageProps) {
                 title="What is fasty?"
                 description="Learn about fasty and its core features"
             >
-                <p>
-                    fasty is a modern, lightweight HTTP client library built for JavaScript and TypeScript. It provides a simple,
-                    intuitive API for making HTTP requests while maintaining excellent performance and a tiny bundle size.
-                </p>
+                <div className="space-y-8">
+                    <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+                        fasty is a modern, lightweight HTTP client library built for JavaScript and TypeScript. It provides a simple,
+                        intuitive API for making HTTP requests while maintaining excellent performance and a tiny bundle size.
+                    </p>
 
-                <h2>Core Principles</h2>
-                <ul>
-                    <li><strong>Performance First</strong> - Optimized for speed with automatic keep-alive pooling and HTTP/2 support</li>
-                    <li><strong>Minimal Bundle Size</strong> - Just 8.2 KB gzipped with zero runtime dependencies</li>
-                    <li><strong>Developer Experience</strong> - TypeScript-first API with excellent type inference</li>
-                    <li><strong>Extensibility</strong> - Powerful plugin system for customization</li>
-                    <li><strong>Universal</strong> - Works in Node, browsers, Deno, Bun, and edge runtimes</li>
-                </ul>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Core Principles</h2>
+                        <ul className="space-y-4">
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Performance First</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Optimized for speed with automatic keep-alive pooling and HTTP/2 support</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Minimal Bundle Size</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Just 8.2 KB gzipped with zero runtime dependencies</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Developer Experience</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - TypeScript-first API with excellent type inference</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Extensibility</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Powerful plugin system for customization</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Universal</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Works in Node, browsers, Deno, Bun, and edge runtimes</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
 
-                <h2>Key Features</h2>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Key Features</h2>
 
-                <h3>Tiny Bundle Size</h3>
-                <p>
-                    At just 8.2 KB gzipped, fasty is one of the smallest full-featured HTTP clients available.
-                    The core is tree-shakeable, so you only bundle what you use.
-                </p>
+                        <div className="space-y-8">
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Tiny Bundle Size</h3>
+                                <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                                    At just 8.2 KB gzipped, fasty is one of the smallest full-featured HTTP clients available.
+                                    The core is tree-shakeable, so you only bundle what you use.
+                                </p>
+                            </div>
 
-                <h3>Plugin Architecture</h3>
-                <p>
-                    fasty's plugin system allows you to extend functionality without bloating the core.
-                    Built-in plugins include retry logic, caching, authentication, and more.
-                </p>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Plugin Architecture</h3>
+                                <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                                    fasty's plugin system allows you to extend functionality without bloating the core.
+                                    Built-in plugins include retry logic, caching, authentication, and more.
+                                </p>
 
-                <CodeBlock code={`import { fasty, retryPlugin, cachePlugin } from 'fasty';
+                                <CodeBlock code={`import { fasty, retryPlugin, cachePlugin } from 'fasty';
 
 const client = new fasty({
   baseURL: 'https://api.example.com',
@@ -51,13 +89,15 @@ const client = new fasty({
     cachePlugin({ ttl: 60000 })
   ]
 });`} />
+                            </div>
 
-                <h3>TypeScript-First</h3>
-                <p>
-                    Built with TypeScript from the ground up, fasty provides excellent type safety and IntelliSense support.
-                </p>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">TypeScript-First</h3>
+                                <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                                    Built with TypeScript from the ground up, fasty provides excellent type safety and IntelliSense support.
+                                </p>
 
-                <CodeBlock code={`interface User {
+                                <CodeBlock code={`interface User {
   id: number;
   name: string;
   email: string;
@@ -66,6 +106,10 @@ const client = new fasty({
 // Fully typed response
 const user = await client.get<User>('/users/123');
 console.log(user.name); // TypeScript knows this is a string`} />
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </DocLayout>
         );
     }
@@ -76,56 +120,110 @@ console.log(user.name); // TypeScript knows this is a string`} />
                 title="Why fasty exists"
                 description="Understanding the motivation behind fasty"
             >
-                <h2>The Problem</h2>
-                <p>
-                    The JavaScript ecosystem has several HTTP client options, but each comes with trade-offs:
-                </p>
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">The Problem</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            The JavaScript ecosystem has several HTTP client options, but each comes with trade-offs:
+                        </p>
 
-                <ul>
-                    <li><strong>fetch</strong> - Native and lightweight, but lacks features like interceptors, retries, and keep-alive in Node</li>
-                    <li><strong>axios</strong> - Feature-rich but relatively large (13+ KB) and doesn't work in edge runtimes</li>
-                    <li><strong>node-fetch</strong> - Good for Node but not universal and lacks advanced features</li>
-                    <li><strong>ky</strong> - Modern but focused on browsers, less optimized for Node</li>
-                </ul>
+                        <ul className="space-y-4">
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">fetch</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Native and lightweight, but lacks features like interceptors, retries, and keep-alive in Node</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">axios</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Feature-rich but relatively large (13+ KB) and doesn't work in edge runtimes</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">node-fetch</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Good for Node but not universal and lacks advanced features</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">ky</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Modern but focused on browsers, less optimized for Node</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
 
-                <h2>The Solution</h2>
-                <p>
-                    fasty was built to provide the best of all worlds:
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">The Solution</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            fasty was built to provide the best of all worlds:
+                        </p>
 
-                <ul>
-                    <li>Small bundle size like fetch</li>
-                    <li>Feature-rich like axios</li>
-                    <li>Universal runtime support</li>
-                    <li>Performance optimizations for Node (keep-alive, HTTP/2)</li>
-                    <li>Modern plugin architecture</li>
-                    <li>TypeScript-first design</li>
-                </ul>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">Small bundle size like fetch</p>
+                            </div>
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">Feature-rich like axios</p>
+                            </div>
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">Universal runtime support</p>
+                            </div>
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">Performance optimizations for Node</p>
+                            </div>
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">Modern plugin architecture</p>
+                            </div>
+                            <div className="p-4 rounded-lg bg-violet-50 dark:bg-violet-900/10 border border-violet-200 dark:border-violet-800">
+                                <p className="text-slate-900 dark:text-white">TypeScript-first design</p>
+                            </div>
+                        </div>
+                    </section>
 
-                <h2>Real-World Benefits</h2>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Real-World Benefits</h2>
 
-                <h3>Reduced Bundle Size</h3>
-                <p>
-                    Every kilobyte matters for web performance. By switching from axios to fasty, you can save ~5 KB in your bundle,
-                    leading to faster page loads and better user experience.
-                </p>
+                        <div className="space-y-8">
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Reduced Bundle Size</h3>
+                                <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                                    Every kilobyte matters for web performance. By switching from axios to fasty, you can save ~5 KB in your bundle,
+                                    leading to faster page loads and better user experience.
+                                </p>
+                            </div>
 
-                <h3>Better Performance in Node</h3>
-                <p>
-                    fasty automatically uses keep-alive agents in Node.js, reducing connection overhead and improving throughput
-                    for applications making many HTTP requests.
-                </p>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Better Performance in Node</h3>
+                                <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                                    fasty automatically uses keep-alive agents in Node.js, reducing connection overhead and improving throughput
+                                    for applications making many HTTP requests.
+                                </p>
+                            </div>
 
-                <h3>Edge Runtime Compatible</h3>
-                <p>
-                    Works seamlessly in Cloudflare Workers, Vercel Edge Functions, and other edge runtimes where traditional
-                    Node-based libraries fail.
-                </p>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Edge Runtime Compatible</h3>
+                                <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                                    Works seamlessly in Cloudflare Workers, Vercel Edge Functions, and other edge runtimes where traditional
+                                    Node-based libraries fail.
+                                </p>
+                            </div>
 
-                <h3>Easier to Extend</h3>
-                <p>
-                    The plugin system makes it simple to add custom behavior without modifying core code or relying on fragile monkey-patching.
-                </p>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Easier to Extend</h3>
+                                <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                                    The plugin system makes it simple to add custom behavior without modifying core code or relying on fragile monkey-patching.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </DocLayout>
         );
     }
@@ -136,26 +234,30 @@ console.log(user.name); // TypeScript knows this is a string`} />
                 title="Key concepts"
                 description="Understanding fasty's core concepts"
             >
-                <h2>Client Instance</h2>
-                <p>
-                    A fasty instance is the main object you use to make HTTP requests. You create one with configuration options
-                    and then use it to make multiple requests.
-                </p>
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Client Instance</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            A fasty instance is the main object you use to make HTTP requests. You create one with configuration options
+                            and then use it to make multiple requests.
+                        </p>
 
-                <CodeBlock code={`const client = new fasty({
+                        <CodeBlock code={`const client = new fasty({
   baseURL: 'https://api.example.com',
   timeout: 5000,
   headers: {
     'Authorization': 'Bearer token'
   }
 });`} />
+                    </section>
 
-                <h2>Request Methods</h2>
-                <p>
-                    fasty provides methods for all standard HTTP verbs: GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS.
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Request Methods</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            fasty provides methods for all standard HTTP verbs: GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS.
+                        </p>
 
-                <CodeBlock code={`// GET request
+                        <CodeBlock code={`// GET request
 const user = await client.get('/users/123');
 
 // POST request with body
@@ -169,14 +271,16 @@ const updated = await client.put('/users/123', { name: 'Jane Doe' });
 
 // DELETE request
 await client.delete('/users/123');`} />
+                    </section>
 
-                <h2>Plugins</h2>
-                <p>
-                    Plugins extend fasty's functionality by intercepting requests and responses. They can modify requests,
-                    handle errors, cache responses, and more.
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Plugins</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            Plugins extend fasty's functionality by intercepting requests and responses. They can modify requests,
+                            handle errors, cache responses, and more.
+                        </p>
 
-                <CodeBlock code={`import { retryPlugin, cachePlugin, authPlugin } from 'fasty/plugins';
+                        <CodeBlock code={`import { retryPlugin, cachePlugin, authPlugin } from 'fasty/plugins';
 
 const client = new fasty({
   plugins: [
@@ -185,19 +289,23 @@ const client = new fasty({
     authPlugin({ token: 'your-token' })
   ]
 });`} />
+                    </section>
 
-                <h2>Transports</h2>
-                <p>
-                    Transports are the underlying mechanism for making HTTP requests. fasty automatically selects the best
-                    transport for your runtime (browser fetch, Node http/https, etc.).
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Transports</h2>
+                        <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+                            Transports are the underlying mechanism for making HTTP requests. fasty automatically selects the best
+                            transport for your runtime (browser fetch, Node http/https, etc.).
+                        </p>
+                    </section>
 
-                <h2>Error Handling</h2>
-                <p>
-                    fasty throws errors for failed requests, making it easy to handle errors with try/catch blocks.
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Error Handling</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            fasty throws errors for failed requests, making it easy to handle errors with try/catch blocks.
+                        </p>
 
-                <CodeBlock code={`try {
+                        <CodeBlock code={`try {
   const data = await client.get('/users/123');
 } catch (error) {
   if (error.status === 404) {
@@ -208,13 +316,15 @@ const client = new fasty({
     console.log('Request failed:', error.message);
   }
 }`} />
+                    </section>
 
-                <h2>Type Safety</h2>
-                <p>
-                    fasty is built with TypeScript and provides full type safety for requests and responses.
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Type Safety</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            fasty is built with TypeScript and provides full type safety for requests and responses.
+                        </p>
 
-                <CodeBlock code={`interface User {
+                        <CodeBlock code={`interface User {
   id: number;
   name: string;
   email: string;
@@ -225,6 +335,8 @@ const user = await client.get<User>('/users/123');
 
 // TypeScript error: Property 'invalid' does not exist on type 'User'
 console.log(user.invalid);`} />
+                    </section>
+                </div>
             </DocLayout>
         );
     }
@@ -235,74 +347,89 @@ console.log(user.invalid);`} />
                 title="Architecture diagram"
                 description="Understanding fasty's internal architecture"
             >
-                <h2>High-Level Architecture</h2>
-                <p>
-                    fasty is designed with a layered architecture that separates concerns and allows for maximum flexibility.
-                </p>
+                <div className="space-y-8">
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">High-Level Architecture</h2>
+                        <p className="text-base leading-7 mb-6 text-slate-700 dark:text-slate-300">
+                            fasty is designed with a layered architecture that separates concerns and allows for maximum flexibility.
+                        </p>
 
-                <div className="my-8 p-8 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <div className="space-y-4">
-                        <ArchitectureLayer
-                            title="Application Layer"
-                            description="Your application code"
-                            color="violet"
-                        />
-                        <div className="flex justify-center">
-                            <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
+                        <div className="my-8 p-8 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                            <div className="space-y-4">
+                                <ArchitectureLayer
+                                    title="Application Layer"
+                                    description="Your application code"
+                                    color="violet"
+                                />
+                                <div className="flex justify-center">
+                                    <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
+                                </div>
+                                <ArchitectureLayer
+                                    title="fasty API"
+                                    description="get(), post(), put(), delete(), etc."
+                                    color="purple"
+                                />
+                                <div className="flex justify-center">
+                                    <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
+                                </div>
+                                <ArchitectureLayer
+                                    title="Plugin System"
+                                    description="onRequest, onResponse, onError hooks"
+                                    color="fuchsia"
+                                />
+                                <div className="flex justify-center">
+                                    <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
+                                </div>
+                                <ArchitectureLayer
+                                    title="Transport Layer"
+                                    description="Browser fetch, Node http/https, Deno, Bun"
+                                    color="pink"
+                                />
+                                <div className="flex justify-center">
+                                    <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
+                                </div>
+                                <ArchitectureLayer
+                                    title="Network"
+                                    description="HTTP/HTTPS requests"
+                                    color="rose"
+                                />
+                            </div>
                         </div>
-                        <ArchitectureLayer
-                            title="fasty API"
-                            description="get(), post(), put(), delete(), etc."
-                            color="purple"
-                        />
-                        <div className="flex justify-center">
-                            <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
-                        </div>
-                        <ArchitectureLayer
-                            title="Plugin System"
-                            description="onRequest, onResponse, onError hooks"
-                            color="fuchsia"
-                        />
-                        <div className="flex justify-center">
-                            <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
-                        </div>
-                        <ArchitectureLayer
-                            title="Transport Layer"
-                            description="Browser fetch, Node http/https, Deno, Bun"
-                            color="pink"
-                        />
-                        <div className="flex justify-center">
-                            <div className="w-px h-8 bg-slate-300 dark:bg-slate-700" />
-                        </div>
-                        <ArchitectureLayer
-                            title="Network"
-                            description="HTTP/HTTPS requests"
-                            color="rose"
-                        />
-                    </div>
-                </div>
+                    </section>
 
-                <h2>Request Flow</h2>
-                <p>
-                    When you make a request, it flows through several stages:
-                </p>
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Request Flow</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            When you make a request, it flows through several stages:
+                        </p>
 
-                <ol>
-                    <li><strong>Request Creation</strong> - Your call to <code>client.get()</code> creates a request object</li>
-                    <li><strong>Plugin onRequest</strong> - Each plugin's <code>onRequest</code> hook is called in order</li>
-                    <li><strong>Transport Execution</strong> - The appropriate transport sends the HTTP request</li>
-                    <li><strong>Plugin onResponse</strong> - Each plugin's <code>onResponse</code> hook is called in reverse order</li>
-                    <li><strong>Response Return</strong> - The final response is returned to your application</li>
-                </ol>
+                        <ol className="space-y-3 ml-6">
+                            <li className="text-slate-700 dark:text-slate-300">
+                                <strong className="text-slate-900 dark:text-white">Request Creation</strong> - Your call to <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">client.get()</code> creates a request object
+                            </li>
+                            <li className="text-slate-700 dark:text-slate-300">
+                                <strong className="text-slate-900 dark:text-white">Plugin onRequest</strong> - Each plugin's <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">onRequest</code> hook is called in order
+                            </li>
+                            <li className="text-slate-700 dark:text-slate-300">
+                                <strong className="text-slate-900 dark:text-white">Transport Execution</strong> - The appropriate transport sends the HTTP request
+                            </li>
+                            <li className="text-slate-700 dark:text-slate-300">
+                                <strong className="text-slate-900 dark:text-white">Plugin onResponse</strong> - Each plugin's <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">onResponse</code> hook is called in reverse order
+                            </li>
+                            <li className="text-slate-700 dark:text-slate-300">
+                                <strong className="text-slate-900 dark:text-white">Response Return</strong> - The final response is returned to your application
+                            </li>
+                        </ol>
 
-                <p>
-                    If an error occurs at any stage, the plugin <code>onError</code> hooks are called, allowing plugins to
-                    retry requests, log errors, or transform error responses.
-                </p>
+                        <p className="text-base leading-7 mt-6 text-slate-700 dark:text-slate-300">
+                            If an error occurs at any stage, the plugin <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">onError</code> hooks are called, allowing plugins to
+                            retry requests, log errors, or transform error responses.
+                        </p>
+                    </section>
 
-                <h2>Plugin Execution Order</h2>
-                <div className="my-8 p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <CodeBlock code={`plugins: [
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Plugin Execution Order</h2>
+                        <CodeBlock code={`plugins: [
   pluginA(),  // onRequest: 1st, onResponse: 3rd
   pluginB(),  // onRequest: 2nd, onResponse: 2nd
   pluginC()   // onRequest: 3rd, onResponse: 1st
@@ -312,20 +439,53 @@ console.log(user.invalid);`} />
 // App → PluginA.onRequest → PluginB.onRequest → PluginC.onRequest
 //     → Transport → Network
 //     → PluginC.onResponse → PluginB.onResponse → PluginA.onResponse → App`} />
+                    </section>
+
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Transport Selection</h2>
+                        <p className="text-base leading-7 mb-4 text-slate-700 dark:text-slate-300">
+                            fasty automatically detects the runtime environment and selects the appropriate transport:
+                        </p>
+
+                        <ul className="space-y-4">
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Browser</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Uses native <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">fetch()</code> API</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Node.js</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Uses <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">http</code>/<code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">https</code> modules with keep-alive agent</span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Deno</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Uses Deno's native <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">fetch()</code></span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Bun</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Uses Bun's optimized <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">fetch()</code></span>
+                                </div>
+                            </li>
+                            <li className="flex gap-3">
+                                <span className="text-violet-600 dark:text-violet-400 font-bold">•</span>
+                                <div>
+                                    <strong className="text-slate-900 dark:text-white">Edge Runtimes</strong>
+                                    <span className="text-slate-700 dark:text-slate-300"> - Uses standard <code className="text-violet-600 dark:text-violet-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">fetch()</code> API</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
-
-                <h2>Transport Selection</h2>
-                <p>
-                    fasty automatically detects the runtime environment and selects the appropriate transport:
-                </p>
-
-                <ul>
-                    <li><strong>Browser</strong> - Uses native <code>fetch()</code> API</li>
-                    <li><strong>Node.js</strong> - Uses <code>http</code>/<code>https</code> modules with keep-alive agent</li>
-                    <li><strong>Deno</strong> - Uses Deno's native <code>fetch()</code></li>
-                    <li><strong>Bun</strong> - Uses Bun's optimized <code>fetch()</code></li>
-                    <li><strong>Edge Runtimes</strong> - Uses standard <code>fetch()</code> API</li>
-                </ul>
             </DocLayout>
         );
     }
@@ -344,7 +504,7 @@ function ArchitectureLayer({ title, description, color }: { title: string; descr
 
     return (
         <div className={`p-4 rounded-lg border-2 ${colorClasses}`}>
-            <div className="font-medium mb-1">{title}</div>
+            <div className="font-semibold mb-1 text-slate-900 dark:text-white">{title}</div>
             <div className="text-sm text-slate-600 dark:text-slate-400">{description}</div>
         </div>
     );
